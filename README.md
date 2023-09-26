@@ -2,4 +2,5 @@
 TPE-WEB-2-GianLaplace (gianlaplace@gmail.com)-JoaquinBlock(joaquin.block@gmail.com)
 Tematica: Gimnasio
 
-<img width="470" alt="image" src="https://github.com/GianFrancoLaplace/TPE-WEB-2/assets/129012250/89a453df-c428-4dad-9841-c00fcb5a7fa5">
+<img width="494" alt="image" src="https://github.com/GianFrancoLaplace/TPE-WEB-2/assets/129012250/89aa4e83-aa4a-40a6-90c0-d67f6eef0a6e">
+
