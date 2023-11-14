@@ -173,4 +173,8 @@ class ProductController{
         $id = $this->modelBrand->update($id, $name, $des, $pais);
         $this->view->showBrands($this->modelBrand->getAll(), "Marca= $id modificada con exito");
     }
+
+    public function showError(){
+        $this->view->showError("ERROR 404 NOT FOUND");
+    }
 }

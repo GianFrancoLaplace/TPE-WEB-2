@@ -87,5 +87,8 @@ switch ($params[0]) {
         $controller = new ProductController();
         $controller->editBrand($params[1]);
         break;
-        
+    default:
+        $controller = new ProductController();
+        $controller->showError();
+        break;
 }

@@ -52,8 +52,6 @@
                 <?php endif; ?>
                 </form>
                 <ul class="list-group">
-                    <h3>Solo se puede modificar de a un campo</h3>
-                    <h6>(Coloque un valor donde quiere modificar y clique el campo que desea modificar)</h6>
                     <?php foreach($products as $product):?>
                         <li class="list-group-item item-rutina">
                             <div class="m-2"></div>
@@ -69,4 +67,6 @@
                         </li>
                     <?php endforeach;?>
                 </ul>
+                <h3>Solo se puede modificar de a un campo</h3>
+                <h6>(Coloque un valor donde quiere modificar y clique el campo que desea modificar)</h6>
             <?php include_once 'templates/footer.phtml';
