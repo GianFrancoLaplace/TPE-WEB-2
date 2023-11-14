@@ -1,0 +1,31 @@
+<header>
+    <img id="logo" src="https://llllline.com/images/thumbs/0000020807_fitness-vector-gym-logo-design_800.jpeg" alt="Logo Pope Gym" srcset="">
+    <nav>
+        <ul>
+            <li><a href="<?= BASE_URL ?>" class="nav-button">Home</a></li>
+            <li><a href="<?=BASE_URL?>productos" class="nav-button">Productos</a></li>
+            
+            <?php 
+            session_start();
+            if($_SESSION==null) : ?>
+                <li>
+                    <a href='login' class='nav-button'>Iniciar Sesion</a>
+                </li><?php
+            else: ?>
+                <li>
+                    <a href='crud' class='nav-button'>Modificar catalogo</a>
+                </li>
+                <li>
+                    <a href='crudMarca' class='nav-button'>Modificar marcas</a>
+                </li>
+                <li>
+                    <a href='logout' class='nav-button'>logout</a>
+                </li><?php
+            endif;
+            ?>
+                
+        </ul>
+    </nav>
+</header>
+
+    
