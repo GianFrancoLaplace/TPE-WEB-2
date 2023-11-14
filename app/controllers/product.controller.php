@@ -20,31 +20,24 @@ class ProductController{
     }
 
     public function showPageProducts($id = null){
-        if($id=="eeuu"){
-            $id="Estados Unidos";
+        if(is_numeric($id)){
+            $this->view->showProducts($this->modelProduct->getMarca($id), $this->getMarcas());
+            return;
         }
-        if(isset($id)){
-            if($id=="Estados Unidos" || $id == "argentina"){
-                $tablaMarcaId = $this->modelBrand->getPaisOrigen($id);
-                $resultado = array();
-                foreach($tablaMarcaId as $object){
-                    $arreglo = $this->modelProduct->getOrigen($object->ID);
-                    array_push($resultado, $arreglo);
-                }
-                $this->view->showProducts($resultado, $this->getMarcas());
-                // var_dump($this->modelProduct->getPaisOrigen(ucfirst($id)));
-                // $this->view->showProducts($this->modelProduct->getPaisOrigen(ucfirst($id)), $this->getMarcas());
 
-            }
-            if($id=="creatina" || $id=="proteina" || $id=="aminoacidos"){
-                $this->view->showProducts($this->modelProduct->getCategoria(ucfirst($id)), $this->getMarcas());
-            }else{
-                $this->view->showProducts($this->modelProduct->getMarca(ucfirst($id)), $this->getMarcas());
-            }
-            
-        }else{
-            $this->view->showProducts($this->modelProduct->getAll(), $this->getMarcas());
+        if($id=="creatina" || $id=="proteina" || $id=="aminoacidos"){
+            $this->view->showProducts($this->modelProduct->getCategoria(ucfirst($id)), $this->getMarcas());
+            return;
         }
+
+        if($id=="eeuu" || $id == "argentina"){
+            if($id=="eeuu")
+                $id="Estados Unidos";
+        
+            $this->view->showProducts($this->modelProduct->getPaisOrigen(ucfirst($id)), $this->getMarcas());
+            return;
+        }
+        $this->view->showProducts($this->modelProduct->getAll(), $this->getMarcas());
     }
 
     function showProductDetails($id){
@@ -92,8 +85,6 @@ class ProductController{
         $this->view->showCrud($this->modelProduct->getAll(), "Producto= $id eliminado con exito");
     }
     function updateProduct($id){
-        var_dump($_POST);
-        die();
         $name = $_POST['Nombre'];
         $price = $_POST['Precio'];
         $weight = $_POST['Peso'];

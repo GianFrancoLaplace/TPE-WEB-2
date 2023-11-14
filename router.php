@@ -25,6 +25,7 @@ switch ($params[0]) {
             $controller->showPageProducts();
             break;
         }
+        
     case 'login':
         $controller = new AuthController();
         $controller->showLogin();

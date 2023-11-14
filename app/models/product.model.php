@@ -48,7 +48,7 @@ END;
     function getPaisOrigen($paisOrigen){
         $query = $this->db->prepare('SELECT a.ID, a.Nombre, a.Precio, a.Img FROM productos a INNER JOIN marcas b ON a.ID_Marca = b.ID WHERE b.Pais_Origen = ?');
         $query->execute([$paisOrigen]);
-        return $query->fetch(PDO::FETCH_OBJ);
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
     //te muestra un registro solo, eso pasa cuando cliqueas en cada item
     function get($id){
